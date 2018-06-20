@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lesson1</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css">
+	<script type="text/javascript"> </script>
+</head>
+
+<body>
+
+<div id="radioButtons">
+ 	<div id="rates">  <form id="Form" name="Form">
+    <input type="radio" name="rads" value="1" /> one
+    <input type="radio" name="rads" value="2" /> two 
+    <input type="radio" name="rads" value="3" /> tree
+    <input type="radio" name="rads" value="4" /> four
+ </form>
+ <span id="result"></span>
+ <script type="text/javascript">
+ document.Form.onclick = function(){
+    var radVal = document.Form.rads.value;
+    result.innerHTML = radVal;
+ }
+ </script>
+</div>
+<br><br>
+<div class="checkbox" >
+  <fieldset>
+    <legend> your interests</legend>
+    <input type="checkbox" class="checkBox" name="interest" value="coding">
+    <label for="checkbox">Coding</label>
+    <input type="checkbox" class="checkBox" name="interest" value="music">
+    <label for="checkbox">Music</label>
+    <input type="checkbox" class="checkBox" name="interest" value="dance">
+    <label for="checkbox">Dance</label>
+     <br><br>
+     <a href="#" onclick="getValue();return false;">get value</a>
+  </fieldset>
+   <script type="text/javascript">
+     function.getValue(){
+     	var checks = document.getElementsByClassName("checks");
+     	var str = " ";
+     	for (i=0 , i<3; i++){
+     		if(checks[i].checked === true ){
+     			str += checks[i].value + " ";
+     		}
+     	}
+     	alert(str);
+     }
+   </script>
+</div>
+<br><br>
+<div id="selectBox">
+  <select id="test" onchange="choice1(this)">
+    <option value="1">First</option>
+    <option value="2">Second</option>
+    <option value="3">Third</option>
+  </select>
+  <script type="text/javascript">
+  function choice1(select) {
+    alert(select.options[select.selectedIndex].text);
+   }
+  </script>
+</div>
+<br><br>
+<div id="inputWithTypeText">
+	<form>
+      <label for="uname"> username: </label>
+      <input type="text" id="uname" name="name" required size="45"
+           pattern="[a-z]{3,10}">
+      <span class="validity"></span>
+      <button>Submit</button>
+    </form>
+</div>
+<br><br>
+<div id="submitButton">
+	<form id="myForm" action="/action_page.php">
+     Fname: <input type="text" name="fname"><br>
+     Lname: <input type="text" name="lname"><br><br>
+     <input type="button" onclick="myFunction()" value="Submit">
+    </form>
+  <script type="text/javascript">
+    function myFunction() {
+    document.getElementById("myForm").submit();
+    }
+  </script>
+</div>
+
+</body>
+</html>
